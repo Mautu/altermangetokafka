@@ -59,7 +59,7 @@ type Notification struct {
     "notify_type": "PROBLEM"
 }
 */
-type messgaekafka struct {
+type Messgaekafka struct {
 	//__module__   string `json:"__module__"`
 	//__class__    string `json:"__class__"`
 	uuid         string `json:"uuid"`

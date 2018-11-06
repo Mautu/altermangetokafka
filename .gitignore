@@ -7,3 +7,5 @@ bin/*/*server
 *npm-debug.log
 vendor
 go.sum
+debug
+.vscode/*

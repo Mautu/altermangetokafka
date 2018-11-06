@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	model "github.com/Mautu/altermangetokafka/modle"
@@ -20,6 +21,16 @@ func main() {
 		}
 
 		c.JSON(http.StatusOK, gin.H{"message": " successful get altermange message"})
+		fmt.Sprintf(notification.Version,
+			notification.GroupKey,
+			notification.GroupKey,
+			notification.Status,
+			notification.Receiver,
+			notification.GroupLabels,
+			notification.CommonLabels,
+			notification.CommonAnnotations,
+			notification.ExternalURL,
+			notification.Alerts)
 
 	})
 	router.Run()
