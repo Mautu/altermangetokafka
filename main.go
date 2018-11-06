@@ -3,13 +3,14 @@ package main
 import (
 	"net/http"
 
+	model "github.com/Mautu/altermangetokafka/modle"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
 	router := gin.Default()
 	router.POST("/altermange", func(c *gin.Context) {
-		var notification Notification
+		var notification model.Notification
 
 		err := c.BindJSON(&notification)
 
