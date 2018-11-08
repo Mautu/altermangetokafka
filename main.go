@@ -1,8 +1,8 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
-	"strconv"
 	"time"
 
 	"github.com/Mautu/altermangetokafka/config"
@@ -32,5 +32,5 @@ func main() {
 		sender.Sender(config.Kafka.Host, notification, config.Kafka.Topic)
 		c.JSON(http.StatusOK, gin.H{"message": " successful get altermange message"})
 	})
-	router.Run(fmt.Sprintf("%s%s", ":",config.Port)))
+	router.Run(fmt.Sprintf("%s%s", ":", config.Port))
 }
