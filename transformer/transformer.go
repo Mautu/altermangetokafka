@@ -19,12 +19,10 @@ func hostaddr(instance string, host string) string {
 }
 
 //AlertToMessagekafka altermanger messge transform to kafka
-func AlertToMessagekafka(alert model.Alert) (messagekafka *model.Messgaekafka) {
+func AlertToMessagekafka(alert model.Alert) (messagekafka model.Messgaekafka) {
 	var status map[string]string
 	status = map[string]string{"resolved": "OK", "firing": "CRITICAL"}
-	uuid := fmt.Sprintf("%s%s", alert.StartsAt.Format("20060102150405"), strconv.FormatInt(alert.StartsAt.Unix(), 10))
-	alert.StartsAt.Format("20060102150405")
-	messagekafka.Uuid = uuid
+	messagekafka.Uuid = fmt.Sprintf("%s%s", alert.StartsAt.Format("20060102150405"), strconv.FormatInt(alert.StartsAt.Unix(), 10))
 	messagekafka.State = status[alert.Status]
 	messagekafka.Alert_type = ""
 	messagekafka.Service_name = alert.Labels["alertname"]
