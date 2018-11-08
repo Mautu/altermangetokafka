@@ -8,4 +8,6 @@ bin/*/*server
 vendor
 go.sum
 debug
-.vscode/*
+.vscode/*.json
+*.exe
+*tmp

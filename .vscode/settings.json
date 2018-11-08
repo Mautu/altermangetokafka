@@ -1,3 +1,4 @@
+{
 "files.autoSave": "onFocusChange",
     
     "go.buildOnSave": true,
@@ -17,7 +18,5 @@
     "go.formatOnSave": false,
     
     "go.formatTool": "goreturns",
-   
-    "go.goroot": "D:\Tools\go\",
-    
-    "go.gopath": "D:\code\go"
+    "go.autocompleteUnimportedPackages":true
+}
