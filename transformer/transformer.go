@@ -1,6 +1,7 @@
 package transformer
 
 import (
+	"fmt"
 	"net"
 	"strconv"
 	"strings"
@@ -21,7 +22,9 @@ func hostaddr(instance string, host string) string {
 func AlertToMessagekafka(alert model.Alert) (messagekafka *model.Messgaekafka) {
 	var status map[string]string
 	status = map[string]string{"resolved": "OK", "firing": "CRITICAL"}
-	messagekafka.Uuid = alert.StartsAt.Format("20060102150405") + strconv.FormatInt(alert.StartsAt.Unix(), 10)
+	uuid := fmt.Sprintf("%s%s", alert.StartsAt.Format("20060102150405"), strconv.FormatInt(alert.StartsAt.Unix(), 10))
+	alert.StartsAt.Format("20060102150405")
+	messagekafka.Uuid = uuid
 	messagekafka.State = status[alert.Status]
 	messagekafka.Alert_type = ""
 	messagekafka.Service_name = alert.Labels["alertname"]
