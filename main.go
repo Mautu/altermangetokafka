@@ -1,7 +1,6 @@
 package main
 
 import (
-	"memento/pkg/util"
 	"net/http"
 	"strconv"
 	"time"
@@ -33,5 +32,5 @@ func main() {
 		sender.Sender(config.Kafka.Host, notification, config.Kafka.Topic)
 		c.JSON(http.StatusOK, gin.H{"message": " successful get altermange message"})
 	})
-	router.Run(util.StrAddbybyte(":", strconv.Itoa(config.Port)))
+	router.Run(fmt.Sprintf("%s%s", ":",config.Port)))
 }
