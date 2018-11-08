@@ -18,7 +18,7 @@ func Sender(address []string, notification modle.Notification, topic string) {
 	config.Producer.Timeout = 5 * time.Second
 	p, err := sarama.NewSyncProducer(address, config)
 	if err != nil {
-		log.Logger.Error("arama.NewSyncProducer err",
+		log.Logger.Error("connect kafka error arama.NewSyncProducer",
 			// Structured context as strongly typed Field values.
 			zap.Error(err))
 		return
