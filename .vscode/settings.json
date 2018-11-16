@@ -18,5 +18,6 @@
     "go.formatOnSave": false,
     
     "go.formatTool": "goreturns",
-    "go.autocompleteUnimportedPackages":true
+    "go.autocompleteUnimportedPackages": true,
+    "python.linting.pylintEnabled": false
 }
