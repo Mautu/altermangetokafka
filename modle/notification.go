@@ -30,7 +30,7 @@ type Messgaekafka struct {
 	Content      string `json:"content"`
 	Alert_type   string `json:"alert_type"`
 	State        string `json:"state"`
-	Alert_time   string `json:"alert_time"` //unixtime
+	Alert_time   int64  `json:"alert_time"` //unixtime
 	Address      string `json:"address"`
 	Host         string `json:"host"`
 	Notify_type  string `json:"notify_type"`

@@ -28,7 +28,7 @@ func AlertToMessagekafka(alert model.Alert) (messagekafka model.Messgaekafka) {
 	messagekafka.Service_name = alert.Labels["alertname"]
 	messagekafka.Content = alert.Annotations["description"]
 	messagekafka.Notify_type = "PROBLEM"
-	messagekafka.Alert_time = strconv.FormatInt(alert.StartsAt.Unix(), 10)
+	messagekafka.Alert_time = alert.StartsAt.Unix()
 	messagekafka.Host = hostaddr(alert.Labels["instance"], alert.Labels["host"])
 	messagekafka.Address = hostaddr(alert.Labels["instance"], alert.Labels["host"])
 	return
